@@ -37,7 +37,7 @@ To buy on day `i`, the best sell is the highest price **after** `i`. Walking rig
 ## Recognize it next time
 
 - "Best pair `(i, j)` with `i < j`", where the value depends on one element and the **best element after it** (or before it) → carry a running max/min in one pass instead of trying every pair.
-- The mirror version is the one most editorials show: scan left → right, keep `minPrice` (the cheapest buy so far), and ask "what if I sell today?". Same idea, same cost.
+- The mirror version is the one most editorials show: scan left → right, keep `minBuyPrice` (the cheapest buy so far), and ask "what if I sell today?". Same idea, same cost. See **Another approach** below.
 
 ## My solution · [`BestTimeToBuyAndSellStock.java`](BestTimeToBuyAndSellStock.java)
 
@@ -53,6 +53,28 @@ class Solution {
             } 
             else {
                 maxProfit = Math.max (maxProfit, maxSellPrice - prices[i]);
+            }
+        }
+        return maxProfit;
+    }
+}
+```
+
+## Another approach: left → right with `minBuyPrice` · [`BestTimeToBuyAndSellStockLeftToRight.java`](BestTimeToBuyAndSellStockLeftToRight.java)
+
+The mirror image of the solution above. Walk **left → right** and carry `minBuyPrice`, the cheapest price on an **earlier** day. Each day is either a sell day worth `prices[i] − minBuyPrice`, or the new cheapest day to buy. Same O(n) time and O(1) space.
+
+```java
+class Solution {
+    public int maxProfit(int[] prices) {
+        int maxProfit = 0;
+        int minBuyPrice = prices[0];
+
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] > minBuyPrice) {
+                maxProfit = Math.max(maxProfit, prices[i] - minBuyPrice);
+            } else {
+                minBuyPrice = prices[i];
             }
         }
         return maxProfit;
