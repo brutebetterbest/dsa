@@ -2,7 +2,7 @@
 
 Problems I've solved, grouped by topic. Open a problem folder to revise it: the GIF at the top shows the approach, and the solution is below it.
 
-**Solved: 7**
+**Solved: 8**
 
 | Topic | # | Problem | Difficulty | Pattern |
 |---|---|---|---|---|
@@ -12,4 +12,5 @@ Problems I've solved, grouped by topic. Open a problem folder to revise it: the 
 | [Arrays](Arrays/) | 04 | [Maximum Subarray](Arrays/04-maximum-subarray/) | Medium | Kadane's algorithm |
 | [Arrays](Arrays/) | 05 | [Product of Array Except Self](Arrays/05-product-of-array-except-self/) | Medium | Prefix × suffix product |
 | [Arrays](Arrays/) | 06 | [3Sum](Arrays/06-3sum/) | Medium | Sort + two pointers |
+| [Arrays](Arrays/) | 07 | [Container With Most Water](Arrays/07-container-with-most-water/) | Medium | Two pointers from both ends |
 | [Sorting](Sorting/) | 01 | [Selection Sort](Sorting/01-selection-sort/) | Easy | Select the min, swap it to the front |
