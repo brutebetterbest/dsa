@@ -2,8 +2,6 @@
 
 `Sorting` · `Easy` · [GeeksforGeeks](https://www.geeksforgeeks.org/problems/selection-sort/1) · **Pattern: Select the min, swap it to the front**
 
-![Selection Sort: select the min, swap it to the front](selection-sort.gif)
-
 > **One-liner:** for each `i`, find `minIndex`, the smallest value in `arr[i .. n−1]`, and swap it into `arr[i]`. The sorted part on the left grows by one cell per pass.
 
 ## Problem
@@ -27,8 +25,6 @@ Before pass `i`, `arr[0 .. i−1]` already holds the `i` smallest values, in ord
 - **Compare with `<`, not `<=`.** With `<=`, an equal value later in the array takes over `minIndex`, and you swap equal values for nothing.
 
 ## Edge case: equal values (not stable)
-
-![Selection Sort: equal values](selection-sort-equal-values.gif)
 
 With `[3, 3, 1]`, the 2nd 3 never takes over `minIndex`, because equal isn't smaller. But `swap(arr, 0, 2)` sends the 1st 3 to the end, past its twin. The result `[1, 3, 3]` is sorted, yet the two 3s are now in reverse order. So selection sort is **not stable**. That only matters when you sort records by a key, e.g. people by age, where the original order of ties should be kept.
 

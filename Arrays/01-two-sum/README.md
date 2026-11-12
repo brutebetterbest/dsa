@@ -2,15 +2,74 @@
 
 `Arrays` · `Easy` · [LeetCode #1](https://leetcode.com/problems/two-sum/) · **Pattern: Hash map of seen values**
 
-![Two Sum: hash map of seen values](two-sum.gif)
-
 > **One-liner:** for each `x`, ask *"have I already seen `target − x`?"* Yes → answer found. No → remember `x` and move on.
 
 ## Problem
 
 Given `nums` and `target`, return the **indices** of the two numbers that add up to `target`. Exactly one answer exists, and the same element can't be used twice.
 
-## Approach: the move, repeated for every `x = nums[i]`
+## From brute force to optimal
+
+The lesson builds three solutions in order. The earlier ones are folded below; the optimal one, my solution, is the rest of this page.
+
+<details>
+<summary><b>1. Brute force</b> · O(n²) time · O(1) space</summary>
+
+Check every pair: fix `i`, try every `j` after it.
+
+```java
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[] {i, j};
+                }
+            }
+        }
+        return new int[] {};
+    }
+}
+```
+
+</details>
+
+<details>
+<summary><b>2. Better: sort + two pointers</b> · O(n log n) time · O(n) space</summary>
+
+Sort the numbers, keeping each one's original index. Then `left` starts at the smallest and `right` at the largest: too small → `left++`, too big → `right--`.
+
+```java
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        // each pair is {value, original index}, sorted by value
+        int[][] pairs = new int[nums.length][];
+        for (int i = 0; i < nums.length; i++) {
+            pairs[i] = new int[] {nums[i], i};
+        }
+        Arrays.sort(pairs, (a, b) -> Integer.compare(a[0], b[0]));
+
+        int left = 0, right = nums.length - 1;
+        while (left < right) {
+            int sum = pairs[left][0] + pairs[right][0];
+            if (sum == target) {
+                return new int[] {pairs[left][1], pairs[right][1]};
+            } else if (sum < target) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+        return new int[] {};
+    }
+}
+```
+
+</details>
+
+**3. Optimal: hash map** · O(n) time · O(n) space, explained below.
+
+## Optimal approach: the move, repeated for every `x = nums[i]`
 
 1. **Its partner is fixed:** `complement = target − x`, so there's nothing to search for.
 2. **Already seen the complement?** If `seen` has it → `return [seen.get(complement), i]`.
@@ -28,16 +87,18 @@ Take the answer pair `(j, i)` with `j < i`. When the scan reaches `i`, `nums[j]`
 
 ## Complexity
 
-| Time | Space |
-|---|---|
-| **O(n)**: one pass, O(1) average lookup | **O(n)**: the map holds up to `n` values |
+| Approach | Time | Space |
+|---|---|---|
+| Brute force | O(n²) | O(1) |
+| Better: sort + two pointers | O(n log n) | O(n) |
+| **Optimal: hash map** (my solution) | **O(n)**: one pass, O(1) average lookup | **O(n)**: the map holds up to `n` values |
 
 ## Recognize it next time
 
 - Find a **pair** with a given **sum or difference** in an **unsorted** array, and return **indices** → keep a hash map of what you've seen.
 - If the array is **sorted** and you only need values, two pointers do it in O(1) space.
 
-## My solution · [`TwoSum.java`](TwoSum.java)
+## My solution (optimal) · [`TwoSum.java`](TwoSum.java)
 
 ```java
 class Solution {

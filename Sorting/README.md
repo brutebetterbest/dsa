@@ -1,6 +1,6 @@
 # Sorting
 
-Each problem folder has a concept GIF, the approach, edge cases and my Java solution.
+Each problem folder has the approach, edge cases and my Java solution.
 
 | # | Problem | Difficulty | Pattern | One-liner |
 |---|---|---|---|---|

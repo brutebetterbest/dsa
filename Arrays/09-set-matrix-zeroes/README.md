@@ -8,7 +8,82 @@
 
 Given an `m × n` integer matrix, if a cell is `0`, set its whole row and column to `0`, **in place**. The follow-up asks for O(1) extra space. `1 ≤ m, n ≤ 200`, and the values can be any `int`, including negatives.
 
-## Approach: the flags live in the first row and column
+## From brute force to optimal
+
+The lesson builds three solutions in order. The earlier ones are folded below; the optimal one, my solution, is the rest of this page.
+
+<details>
+<summary><b>1. Brute force: a full copy</b> · O(m·n·(m+n)) time · O(m·n) space</summary>
+
+Zeroing while you scan would spread: a zero you wrote looks like an original one. So read the zeros from `matrix`, write the new zeros into a copy, then copy the answer back.
+
+```java
+class Solution {
+    public void setZeroes(int[][] matrix) {
+        int rows = matrix.length, cols = matrix[0].length;
+        int[][] copy = new int[rows][];
+        for (int i = 0; i < rows; i++) {
+            copy[i] = matrix[i].clone();
+        }
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (matrix[i][j] == 0) {
+                    for (int c = 0; c < cols; c++) {
+                        copy[i][c] = 0;
+                    }
+                    for (int r = 0; r < rows; r++) {
+                        copy[r][j] = 0;
+                    }
+                }
+            }
+        }
+
+        for (int i = 0; i < rows; i++) {
+            System.arraycopy(copy[i], 0, matrix[i], 0, cols);
+        }
+    }
+}
+```
+
+</details>
+
+<details>
+<summary><b>2. Better: <code>zeroRows</code> + <code>zeroCols</code></b> · O(m·n) time · O(m + n) space</summary>
+
+All we need is which rows and which columns have a zero. Pass one sets the flags, pass two fills the matrix.
+
+```java
+class Solution {
+    public void setZeroes(int[][] matrix) {
+        int rows = matrix.length, cols = matrix[0].length;
+        boolean[] zeroRows = new boolean[rows], zeroCols = new boolean[cols];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (matrix[i][j] == 0) {
+                    zeroRows[i] = true;
+                    zeroCols[j] = true;
+                }
+            }
+        }
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (zeroRows[i] || zeroCols[j]) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+    }
+}
+```
+
+</details>
+
+**3. Optimal: flags in row 0 and column 0** · O(m·n) time · O(1) space, explained below.
+
+## Optimal approach: the flags live in the first row and column
 
 1. **Remember row 0's own zero:** scan row 0 and set `firstRowHasZero`. The next pass writes flags into row 0, so this is the only chance to read it.
 2. **Mark first row and column as flags:** for every zero at `(i, j)` with `i ≥ 1`, set `matrix[i][0] = 0` (row `i`) and `matrix[0][j] = 0` (column `j`). Because `j` starts at 0, a zero in column 0 sets `matrix[0][0]`, which is column 0's flag.
@@ -28,16 +103,18 @@ Each flag is written into a cell that has to end up `0` anyway: row `i`'s flag `
 
 ## Complexity
 
-| Time | Space |
-|---|---|
-| **O(m·n)**: a few passes over the grid | **O(1)** extra: one boolean; the flags live in the matrix itself |
+| Approach | Time | Space |
+|---|---|---|
+| Brute force: a full copy | O(m·n·(m+n)) | O(m·n) |
+| Better: `zeroRows` + `zeroCols` | O(m·n) | O(m + n) |
+| **Optimal: flags in row 0 and column 0** (my solution) | **O(m·n)**: a few passes over the grid | **O(1)** extra: one boolean; the flags live in the matrix itself |
 
 ## Recognize it next time
 
 - "In place" or "O(1) extra space" on a grid, when the easy version needs a marks array per row and column: store the marks in the first row and column (or in the cells, with an extra state).
 - The O(m + n) version with `boolean[] zeroRows` and `boolean[] zeroCols` is the easy stepping stone. Game of Life uses the same in-place idea, encoding the next state in the cell itself.
 
-## My solution · [`SetMatrixZeroes.java`](SetMatrixZeroes.java)
+## My solution (optimal) · [`SetMatrixZeroes.java`](SetMatrixZeroes.java)
 
 ```java
 class Solution {
