@@ -2,6 +2,10 @@
 
 `Arrays` · `Easy` · [LeetCode #1](https://leetcode.com/problems/two-sum/) · **Pattern: Hash map of seen values**
 
+[![Two Sum: the lesson, from brute force to optimal](https://img.youtube.com/vi/r0tNiRyVwyI/maxresdefault.jpg)](https://youtu.be/r0tNiRyVwyI)
+
+▶ **[Watch the lesson](https://youtu.be/r0tNiRyVwyI)** · Quick version: **[Short](https://youtube.com/shorts/oVb-YNIuttg)**
+
 > **One-liner:** for each `x`, ask *"have I already seen `target − x`?"* Yes → answer found. No → remember `x` and move on.
 
 ## Problem
