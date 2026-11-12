@@ -1,6 +1,6 @@
 # Arrays
 
-Each problem folder has a concept GIF, the approach, edge cases and my Java solution.
+Each problem folder has the approach, edge cases and my Java solution, with its lesson on YouTube.
 
 | # | Problem | Difficulty | Pattern | One-liner |
 |---|---|---|---|---|
@@ -12,3 +12,4 @@ Each problem folder has a concept GIF, the approach, edge cases and my Java solu
 | 06 | [3Sum](06-3sum/) | Medium | Sort + two pointers | Sort; for each `i` (skip repeats), `sum < 0` → `left++`, `sum > 0` → `right--`, `0` → add, then skip repeats |
 | 07 | [Container With Most Water](07-container-with-most-water/) | Medium | Two pointers from both ends | Area = `width × min(height[left], height[right])`; keep the best in `maxArea`, move the shorter line inward |
 | 08 | [Subarray Sum Equals K](08-subarray-sum-equals-k/) | Medium | Prefix sum + hash map | At each `prefixSum`, add how many times `prefixSum − k` was seen; seed `put(0, 1)`, count then store |
+| 09 | [Set Matrix Zeroes](09-set-matrix-zeroes/) | Medium | First row and column as flags | Flag rows in `matrix[i][0]`, columns in `matrix[0][j]` (+ `firstRowHasZero`); zero the inner cells, then column 0, then row 0 |

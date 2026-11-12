@@ -6,7 +6,7 @@ Every DSA problem, from brute force to the best idea.
 
 Each problem gets a narrated video on [YouTube @brutebetterbestdsa](https://www.youtube.com/@brutebetterbestdsa) that builds the answer the way you'd discover it: start with brute force, see what it wastes, make it better, then land on the optimal idea. This repo holds the Java solution and the revision notes for every problem.
 
-**Solved: 9**
+**Solved: 10**
 
 | Topic | # | Problem | Difficulty | Pattern |
 |---|---|---|---|---|
@@ -18,4 +18,5 @@ Each problem gets a narrated video on [YouTube @brutebetterbestdsa](https://www.
 | [Arrays](Arrays/) | 06 | [3Sum](Arrays/06-3sum/) | Medium | Sort + two pointers |
 | [Arrays](Arrays/) | 07 | [Container With Most Water](Arrays/07-container-with-most-water/) | Medium | Two pointers from both ends |
 | [Arrays](Arrays/) | 08 | [Subarray Sum Equals K](Arrays/08-subarray-sum-equals-k/) | Medium | Prefix sum + hash map |
+| [Arrays](Arrays/) | 09 | [Set Matrix Zeroes](Arrays/09-set-matrix-zeroes/) | Medium | First row and column as flags |
 | [Sorting](Sorting/) | 01 | [Selection Sort](Sorting/01-selection-sort/) | Easy | Select the min, swap it to the front |
