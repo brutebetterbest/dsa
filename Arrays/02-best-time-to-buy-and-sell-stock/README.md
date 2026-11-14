@@ -2,6 +2,10 @@
 
 `Arrays` · `Easy` · [LeetCode #121](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) · **Pattern: Running max from the right**
 
+[![Best Time to Buy and Sell Stock: the lesson, from brute force to optimal](https://img.youtube.com/vi/V3Ic6tEwLSQ/maxresdefault.jpg)](https://youtu.be/V3Ic6tEwLSQ)
+
+▶ **[Watch the lesson](https://youtu.be/V3Ic6tEwLSQ)** · Quick version: **[Short](https://youtube.com/shorts/ElhEPZ39-2g)**
+
 > **One-liner:** walk right → left carrying `maxSellPrice`, the highest price on a later day. Each day is either a new sell day or a buy day worth `maxSellPrice − prices[i]`.
 
 ## Problem
