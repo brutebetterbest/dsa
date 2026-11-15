@@ -2,6 +2,10 @@
 
 `Arrays` · `Easy` · [LeetCode #217](https://leetcode.com/problems/contains-duplicate/) · **Pattern: Hash set of seen values**
 
+[![Contains Duplicate: the lesson, from brute force to optimal](https://img.youtube.com/vi/9tBK610wwDA/maxresdefault.jpg)](https://youtu.be/9tBK610wwDA)
+
+▶ **[Watch the lesson](https://youtu.be/9tBK610wwDA)** · Quick version: **[Short](https://youtube.com/shorts/8tDvQWPL5Ow)**
+
 > **One-liner:** for each `num`, try `seen.add(num)`. `false` means it was already there → duplicate. If the loop finishes, every value was new → `false`.
 
 ## Problem
