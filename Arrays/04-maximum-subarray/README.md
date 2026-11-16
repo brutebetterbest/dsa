@@ -2,6 +2,10 @@
 
 `Arrays` · `Medium` · [LeetCode #53](https://leetcode.com/problems/maximum-subarray/) · **Pattern: Kadane's algorithm**
 
+[![Maximum Subarray: the lesson, from brute force to optimal](https://img.youtube.com/vi/EsbkQZ6IqU0/maxresdefault.jpg)](https://youtu.be/EsbkQZ6IqU0)
+
+▶ **[Watch the lesson](https://youtu.be/EsbkQZ6IqU0)** · Quick version: **[Short](https://youtube.com/shorts/Pn9JMjs1YbU)**
+
 > **One-liner:** at each `i`, the best run ending here is either the previous run extended (`currentSum + nums[i]`) or a fresh start (`nums[i]`). Keep the bigger one, and remember the best you ever saw in `maxSum`.
 
 ## Problem
