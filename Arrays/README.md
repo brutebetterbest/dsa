@@ -13,3 +13,4 @@ Each problem folder has the approach, edge cases and my Java solution, with its 
 | 07 | [Container With Most Water](07-container-with-most-water/) | Medium | Two pointers from both ends | Area = `width × min(height[left], height[right])`; keep the best in `maxArea`, move the shorter line inward |
 | 08 | [Subarray Sum Equals K](08-subarray-sum-equals-k/) | Medium | Prefix sum + hash map | At each `prefixSum`, add how many times `prefixSum − k` was seen; seed `put(0, 1)`, count then store |
 | 09 | [Set Matrix Zeroes](09-set-matrix-zeroes/) | Medium | First row and column as flags | Flag rows in `matrix[i][0]`, columns in `matrix[0][j]` (+ `firstRowHasZero`); zero the inner cells, then column 0, then row 0 |
+| 10 | [Spiral Matrix](10-spiral-matrix/) | Medium | Four shrinking boundaries | Walk the top row, right column, bottom row and left column, shrinking `top`, `right`, `bottom`, `left` after each; stop when one row or column was left |
