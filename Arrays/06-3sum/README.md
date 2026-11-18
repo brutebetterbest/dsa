@@ -2,6 +2,10 @@
 
 `Arrays` · `Medium` · [LeetCode #15](https://leetcode.com/problems/3sum/) · **Pattern: Sort + two pointers**
 
+[![3Sum: the lesson, from brute force to optimal](https://img.youtube.com/vi/HzKIGpP_wm0/maxresdefault.jpg)](https://youtu.be/HzKIGpP_wm0)
+
+▶ **[Watch the lesson](https://youtu.be/HzKIGpP_wm0)** · Quick version: **[Short](https://youtube.com/shorts/X4U0-quVdHU)**
+
 > **One-liner:** sort, then for each `nums[i]` walk `left` and `right` toward each other: `sum < 0` → `left++`, `sum > 0` → `right--`, `sum == 0` → add it. Skipping repeated values at `i`, `left` and `right` keeps every triplet unique.
 
 ## Problem
