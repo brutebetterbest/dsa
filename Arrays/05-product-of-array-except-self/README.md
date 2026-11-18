@@ -2,6 +2,10 @@
 
 `Arrays` · `Medium` · [LeetCode #238](https://leetcode.com/problems/product-of-array-except-self/) · **Pattern: Prefix × suffix product**
 
+[![Product of Array Except Self: the lesson, from brute force to optimal](https://img.youtube.com/vi/DNGSl1Ld5IU/maxresdefault.jpg)](https://youtu.be/DNGSl1Ld5IU)
+
+▶ **[Watch the lesson](https://youtu.be/DNGSl1Ld5IU)** · Quick version: **[Short](https://youtube.com/shorts/pk2IpsrkNn8)**
+
 > **One-liner:** `answer[i]` = product of everything **left** of `i` × product of everything **right** of `i`. Pass 1 (→) stores the left products in `answer`, and pass 2 (←) multiplies in a running `suffixProduct`.
 
 ## Problem
