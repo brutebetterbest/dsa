@@ -2,6 +2,10 @@
 
 `Arrays` · `Medium` · [LeetCode #11](https://leetcode.com/problems/container-with-most-water/) · **Pattern: Two pointers from both ends**
 
+[![Container With Most Water: the lesson, from brute force to optimal](https://img.youtube.com/vi/KSOscs38zkg/maxresdefault.jpg)](https://youtu.be/KSOscs38zkg)
+
+▶ **[Watch the lesson](https://youtu.be/KSOscs38zkg)** · Quick version: **[Short](https://youtube.com/shorts/VMna9NPKvCs)**
+
 > **One-liner:** start with the widest pair, `left = 0` and `right = n − 1`. The water is `width × waterHeight`, where `waterHeight` is the **shorter** line. Keep the best in `maxArea`, then move the shorter line inward.
 
 ## Problem
