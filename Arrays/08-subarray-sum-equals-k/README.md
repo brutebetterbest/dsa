@@ -2,6 +2,10 @@
 
 `Arrays` · `Medium` · [LeetCode #560](https://leetcode.com/problems/subarray-sum-equals-k/) · **Pattern: Prefix sum + hash map**
 
+[![Subarray Sum Equals K: the lesson, from brute force to optimal](https://img.youtube.com/vi/sqeP2SRunW0/maxresdefault.jpg)](https://youtu.be/sqeP2SRunW0)
+
+▶ **[Watch the lesson](https://youtu.be/sqeP2SRunW0)** · Quick version: **[Short](https://youtube.com/shorts/Mkr8MoPiRqg)**
+
 > **One-liner:** keep a running `prefixSum`. A subarray ending at `i` sums to `k` exactly when an earlier prefix sum equals `prefixSum − k`, so add how many times that value was seen, then store the current `prefixSum`.
 
 ## Problem
