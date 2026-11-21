@@ -10,7 +10,7 @@ Given an array of strings `strs`, return the longest prefix that all of them sha
 
 ## From brute force to optimal
 
-The lesson builds three solutions in order. The earlier ones are folded below; the optimal one, my solution, is the rest of this page. Below, `n` is the number of strings and `m` is the length of `strs[0]`.
+The lesson builds two solutions in order. The earlier one is folded below; the optimal one, my solution, is the rest of this page. Below, `n` is the number of strings and `m` is the length of `strs[0]`.
 
 <details>
 <summary><b>1. Brute force: try every prefix of the first string, longest first</b> · O(n·m²) time · O(m) space</summary>
@@ -41,35 +41,11 @@ class Solution {
 
 </details>
 
-<details>
-<summary><b>2. Better: one prefix that only shrinks (<code>StringBuilder</code> + <code>startsWith</code>)</b> · O(n·m + m²) time · O(m) space</summary>
-
-Brute force rechecks every string for every candidate. But a string that starts with `prefix` also starts with every shorter piece of it, so keep one `prefix`, walk the strings once, and delete its last character until the current string starts with it. I solved it this way too.
-
-```java
-class Solution {
-    public String longestCommonPrefix(String[] strs) {
-        StringBuilder prefix = new StringBuilder(strs[0]);
-        for (int i = 1; i < strs.length; i++) {
-            while (!strs[i].startsWith(prefix.toString())) {
-                prefix.deleteCharAt(prefix.length() - 1);
-            }
-            if (prefix.length() == 0) {
-                break;
-            }
-        }
-        return prefix.toString();
-    }
-}
-```
-
-</details>
-
-**3. Optimal: count the matching characters** · O(n·m) time · O(1) space, explained below.
+**2. Optimal: count the matching characters** · O(n·m) time · O(1) space, explained below.
 
 ## Optimal approach: count, don't copy
 
-The better approach deletes one character, then checks the whole prefix again from the start. Instead, walk the string once and count how far it agrees with the prefix: that count is the new prefix length.
+Brute force copies each shorter candidate and checks every string against it from the first letter again. Instead, walk each string once and count how far it agrees with the prefix: that count is the new prefix length.
 
 1. **Start with all of the first string:** `prefixLength = first.length()`.
 2. **For each next string, count `matched`:** step forward while both strings still have characters, `matched` is below `prefixLength`, and the characters are equal.
@@ -95,7 +71,6 @@ A string that shares the first `k` characters with `first` also shares every sho
 | Approach | Time | Space |
 |---|---|---|
 | Brute force: try every prefix, longest first | O(n·m²) | O(m): the candidate substring |
-| Better: one shrinking `StringBuilder` + `startsWith` | O(n·m + m²) | O(m): the builder, and a new `String` for every check |
 | **Optimal: count the matching characters** (my solution) | **O(n·m)**: each character of each string is compared at most once | **O(1)**: two counters, plus the result |
 
 ## Recognize it next time
