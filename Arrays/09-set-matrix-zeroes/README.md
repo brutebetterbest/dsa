@@ -2,6 +2,10 @@
 
 `Arrays` · `Medium` · [LeetCode #73](https://leetcode.com/problems/set-matrix-zeroes/) · **Pattern: First row and column as flags**
 
+[![Set Matrix Zeroes: the lesson, from brute force to optimal](https://img.youtube.com/vi/2qHk07iM-wA/maxresdefault.jpg)](https://youtu.be/2qHk07iM-wA)
+
+▶ **[Watch the lesson](https://youtu.be/2qHk07iM-wA)** · Quick version: **[Short](https://youtube.com/shorts/MoZsf1X6P5s)**
+
 > **One-liner:** use row 0 and column 0 as the flags for which rows and columns become zero, with one extra boolean for row 0's own zero. Zero the inner cells from the flags, then column 0 (its flag is `matrix[0][0]`), and **then** row 0.
 
 ## Problem
