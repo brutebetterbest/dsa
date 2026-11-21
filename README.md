@@ -6,7 +6,7 @@ Every DSA problem, from brute force to the best idea.
 
 Each problem gets a narrated video on [YouTube @brutebetterbestdsa](https://www.youtube.com/@brutebetterbestdsa) that builds the answer the way you'd discover it: start with brute force, see what it wastes, make it better, then land on the optimal idea. This repo holds the Java solution and the revision notes for every problem.
 
-**Solved: 15**
+**Solved: 16**
 
 | Topic | # | Problem | Difficulty | Pattern |
 |---|---|---|---|---|
@@ -25,3 +25,4 @@ Each problem gets a narrated video on [YouTube @brutebetterbestdsa](https://www.
 | [Sorting](Sorting/) | 01 | [Selection Sort](Sorting/01-selection-sort/) | Easy | Select the min, swap it to the front |
 | [Strings](Strings/) | 01 | [Valid Anagram](Strings/01-valid-anagram/) | Easy | Frequency count array |
 | [Strings](Strings/) | 02 | [Valid Palindrome](Strings/02-valid-palindrome/) | Easy | Two pointers from both ends |
+| [Strings](Strings/) | 03 | [Longest Common Prefix](Strings/03-longest-common-prefix/) | Easy | Shrinking prefix length |
