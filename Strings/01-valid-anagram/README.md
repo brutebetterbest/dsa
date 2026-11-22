@@ -2,6 +2,10 @@
 
 `Strings` · `Easy` · [LeetCode #242](https://leetcode.com/problems/valid-anagram/) · **Pattern: Frequency count array**
 
+[![Valid Anagram: the lesson, from brute force to optimal](https://img.youtube.com/vi/IM4qkHW_m7I/maxresdefault.jpg)](https://youtu.be/IM4qkHW_m7I)
+
+▶ **[Watch the lesson](https://youtu.be/IM4qkHW_m7I)** · Quick version: **[Short](https://youtube.com/shorts/gbpkHWOCdcg)**
+
 > **One-liner:** count every letter **up** for `s` and **down** for `t` in one `int[26]`. If every count ends at `0`, the two strings use the same letters the same number of times.
 
 ## Problem
