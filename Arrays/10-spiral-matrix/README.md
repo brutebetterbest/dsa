@@ -2,6 +2,10 @@
 
 `Arrays` · `Medium` · [LeetCode #54](https://leetcode.com/problems/spiral-matrix/) · **Pattern: Four shrinking boundaries**
 
+[![Spiral Matrix: the lesson, from brute force to optimal](https://img.youtube.com/vi/EbzBakMoG6Y/maxresdefault.jpg)](https://youtu.be/EbzBakMoG6Y)
+
+▶ **[Watch the lesson](https://youtu.be/EbzBakMoG6Y)** · Quick version: **[Short](https://youtube.com/shorts/EoVH9CXWxp8)**
+
 > **One-liner:** keep four boundaries, `top`, `bottom`, `left` and `right`, around the part not visited yet. Walk the top row, the right column, the bottom row and the left column, and shrink each side right after walking it. If only one row or column was left, stop before walking it back.
 
 ## Problem
