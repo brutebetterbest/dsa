@@ -2,6 +2,10 @@
 
 `Strings` · `Easy` · [LeetCode #125](https://leetcode.com/problems/valid-palindrome/) · **Pattern: Two pointers from both ends**
 
+[![Valid Palindrome: the lesson, from brute force to optimal](https://img.youtube.com/vi/tGgBOJzNd60/maxresdefault.jpg)](https://youtu.be/tGgBOJzNd60)
+
+▶ **[Watch the lesson](https://youtu.be/tGgBOJzNd60)** · Quick version: **[Short](https://youtube.com/shorts/AHB1UFu-IyY)**
+
 > **One-liner:** walk `left` and `right` toward each other on the original string, skip anything that isn't a letter or digit, and compare the two characters lowercased. A mismatch means `false`; meeting in the middle means `true`.
 
 ## Problem
