@@ -6,7 +6,7 @@ Every DSA problem, from brute force to the best idea.
 
 Each problem gets a narrated video on [YouTube @brutebetterbestdsa](https://www.youtube.com/@brutebetterbestdsa) that builds the answer the way you'd discover it: start with brute force, see what it wastes, make it better, then land on the optimal idea. This repo holds the Java solution and the revision notes for every problem.
 
-**Solved: 18**
+**Solved: 19**
 
 | Topic | # | Problem | Difficulty | Pattern |
 |---|---|---|---|---|
@@ -28,3 +28,4 @@ Each problem gets a narrated video on [YouTube @brutebetterbestdsa](https://www.
 | [Strings](Strings/) | 03 | [Longest Common Prefix](Strings/03-longest-common-prefix/) | Easy | Shrinking prefix length |
 | [Strings](Strings/) | 04 | [Longest Substring Without Repeating Characters](Strings/04-longest-substring-without-repeating-characters/) | Medium | Sliding window + last-seen position |
 | [Strings](Strings/) | 05 | [Group Anagrams](Strings/05-group-anagrams/) | Medium | Hash map with a letter-count key |
+| [Strings](Strings/) | 06 | [Longest Repeating Character Replacement](Strings/06-longest-repeating-character-replacement/) | Medium | Sliding window + most frequent letter |
