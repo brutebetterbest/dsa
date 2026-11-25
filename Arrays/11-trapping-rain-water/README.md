@@ -2,6 +2,10 @@
 
 `Arrays` · `Hard` · [LeetCode #42](https://leetcode.com/problems/trapping-rain-water/) · **Pattern: Two pointers + water level**
 
+[![Trapping Rain Water: the lesson, from brute force to optimal](https://img.youtube.com/vi/DNiH9lqYUoI/maxresdefault.jpg)](https://youtu.be/DNiH9lqYUoI)
+
+▶ **[Watch the lesson](https://youtu.be/DNiH9lqYUoI)** · Quick version: **[Short](https://youtube.com/shorts/b7qyqjdSJUE)**
+
 > **One-liner:** move the pointer on the lower bar one step inward. If the new bar is below `waterLevel`, it holds `waterLevel − height` of water; otherwise it's a new wall, and `waterLevel` becomes the lower of the two bars under the pointers.
 
 ## Problem
